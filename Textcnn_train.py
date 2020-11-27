@@ -213,3 +213,5 @@ for epoch in range(15):
     print('epoch={},训练准确率={},误判率 ={}'.format(epoch, train_acc,loss))
     test_acc = evaluate(cnn, criteon)
     print("epoch={},测试准确率={}".format(epoch, test_acc))
+    
+#     torch.save(cnn.state_dict(), 'model-textcnn5.pkl')

@@ -214,4 +214,5 @@ for epoch in range(15):
     test_acc = evaluate(cnn, criteon)
     print("epoch={},测试准确率={}".format(epoch, test_acc))
     
-#     torch.save(cnn.state_dict(), 'model-textcnn5.pkl')
+    
+# torch.save(cnn.state_dict(), 'model-textcnn5.pkl')

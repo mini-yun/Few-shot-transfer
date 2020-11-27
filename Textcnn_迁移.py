@@ -155,7 +155,7 @@ class next(nn.Module):
         return logit
 
 cnn=TextCNN(VOCAB_SIZE, 300, 2)
-cnn.load_state_dict(torch.load('./model6.pkl'))
+cnn.load_state_dict(torch.load('./model-textcnn6.pkl'))
 cnnnext=next(2)
 optimizer = optim.Adam(cnnnext.parameters(), lr=LEARNING_RATE)
 criteon = nn.CrossEntropyLoss()

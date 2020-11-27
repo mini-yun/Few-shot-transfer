@@ -211,3 +211,5 @@ for epoch in range(10):
     print('epoch={},训练准确率={},loss ={}'.format(epoch, train_acc,loss))
     test_acc= evaluate(rnn, criterion)
     print("epoch={},测试准确率={}".format(epoch, test_acc))
+    
+# torch.save(cnn.state_dict(), 'model-lstm5.pkl')

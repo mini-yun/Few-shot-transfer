@@ -150,7 +150,7 @@ rnn = LSTM_model.BiLSTM_Attention(
                                   n_layers=n_layers
     )
 
-rnn.load_state_dict(torch.load('./model-LSTM6.pkl'))
+rnn.load_state_dict(torch.load('./model-lstm6.pkl'))
 
 rnnnext=LSTM_model.next(output_size=2,hidden_dim=hidden_dim)
 

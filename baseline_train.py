@@ -146,13 +146,7 @@ class TextCNN(nn.Module):
         out = self.dropout(out)
         logit = self.fc(out)
         return logit
-#
-#
-#
-#
-# # textcnn=TextCNN(352217,300,2)
-# # textcnn.load_state_dict(torch.load('bigmodel6.pkl'))
-#
+
 cnn = TextCNN(VOCAB_SIZE, 192, 2)
 cnn.embedding.weight.data.copy_(torch.FloatTensor(static_embeddings))
 
@@ -179,26 +173,10 @@ def train(cnn, optimizer, criteon):
             x_batch = torch.LongTensor(x_batch)
             y_batch = torch.LongTensor(y_batch.to_numpy())
 
-            # lasize = y_batch.squeeze().size()
-            # zes = Variable(torch.zeros(lasize).type(torch.LongTensor))
-            #
-            # ons = Variable(torch.ones(lasize).type(torch.LongTensor))
+
 
             y_batch = y_batch.squeeze()
             pred = cnn(x_batch)
-            # y_1 = textcnn(x_batch)
-
-
-
-            # train_correct11 = ((torch.max(pred, dim=1)[1] == ons) & (y_batch == ons)).sum()
-            # train_correct00 = ((torch.max(pred, dim=1)[1] == zes) & (y_batch == zes)).sum()
-            #
-            # FN+= train_correct01.data[0]
-            #
-            # FP+= train_correct10.data[0]
-            #
-            # TP+= train_correct11.data[0]
-            # TN+= train_correct00.data[0]
 
             acc = binary_acc(torch.max(pred, dim=1)[1], y_batch)
             avg_acc.append(acc)
